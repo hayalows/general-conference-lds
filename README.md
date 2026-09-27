@@ -1,4 +1,4 @@
-# General Conference Countdown
+# General Conference Countdown\n\n**Live:** https://general-conference-countdown.floot.app
 
 A lightweight, independent countdown helper for the **October 3–4, 2026 General Conference** of The Church of Jesus Christ of Latter-day Saints.
 
@@ -59,3 +59,4 @@ The repository is designed to deploy as a static site on Vercel with no build co
 ## Disclaimer
 
 This project is independent and is **not an official website** of The Church of Jesus Christ of Latter-day Saints. It links to official Church sources for schedule and viewing information.
+\n\n## Production hosting\n\nThe repository is the host-agnostic source for the countdown experience. The current public build is hosted at `general-conference-countdown.floot.app`.\n
