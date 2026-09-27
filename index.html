@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f5f2ea" />
+  <meta name="description" content="A simple countdown to the October 2026 General Conference with session times in your local timezone and verified official ways to watch or listen." />
+  <meta property="og:title" content="General Conference Countdown" />
+  <meta property="og:description" content="See the next October 2026 General Conference session in your local time and find verified official ways to watch or listen." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>General Conference Countdown</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "October 2026 General Conference",
+    "startDate": "2026-10-03T16:00:00Z",
+    "endDate": "2026-10-04T22:00:00Z",
+    "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "VirtualLocation",
+      "url": "https://www.churchofjesuschrist.org/media/broadcasts/?lang=eng"
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "The Church of Jesus Christ of Latter-day Saints",
+      "url": "https://www.churchofjesuschrist.org/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header" aria-label="Site header">
+    <div class="shell header-inner">
+      <a class="brand" href="#top" aria-label="General Conference Countdown home">
+        <span class="brand-mark" aria-hidden="true"><span></span></span>
+        <span>Conference Countdown</span>
+      </a>
+      <a class="official-link" href="https://www.churchofjesuschrist.org/feature/general-conference?lang=eng" target="_blank" rel="noreferrer">
+        Official conference page
+        <svg aria-hidden="true" viewBox="0 0 20 20"><path d="M7 13 13 7M8 7h5v5"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="page-title">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">October 3–4, 2026 · 196th Semiannual General Conference</p>
+          <h1 id="page-title">Conference, in your time.</h1>
+          <p class="hero-intro">See when the next session begins where you are, then choose a verified official way to watch or listen.</p>
+
+          <div class="status-row" aria-live="polite" aria-atomic="true">
+            <span class="status-dot" id="statusDot" aria-hidden="true"></span>
+            <span id="statusText">Finding the next session…</span>
+          </div>
+
+          <div class="countdown" id="countdown" role="timer" aria-live="off" aria-label="Countdown to the next conference session">
+            <div class="count-unit"><strong id="days">00</strong><span>Days</span></div>
+            <div class="count-unit"><strong id="hours">00</strong><span>Hours</span></div>
+            <div class="count-unit"><strong id="minutes">00</strong><span>Minutes</span></div>
+            <div class="count-unit"><strong id="seconds">00</strong><span>Seconds</span></div>
+          </div>
+
+          <div class="hero-actions">
+            <a class="button button-primary" id="primaryWatch" href="https://www.churchofjesuschrist.org/media/broadcasts/?lang=eng" target="_blank" rel="noreferrer">
+              Watch on ChurchofJesusChrist.org
+              <svg aria-hidden="true" viewBox="0 0 20 20"><path d="m7.5 5 5 5-5 5"/></svg>
+            </a>
+            <button class="button button-secondary" id="addNextCalendar" type="button">Add next session to calendar</button>
+          </div>
+
+          <p class="timezone-note">Times below use <strong id="timezoneLabel">your device timezone</strong>. No location permission is needed.</p>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <div class="orb orb-one"></div>
+          <div class="orb orb-two"></div>
+          <div class="arch-card">
+            <div class="arch-light"></div>
+            <div class="arch-line arch-line-one"></div>
+            <div class="arch-line arch-line-two"></div>
+            <div class="arch-line arch-line-three"></div>
+            <div class="arch-horizon"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-schedule" aria-labelledby="schedule-title">
+      <div class="shell">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="section-kicker">Your schedule</p>
+            <h2 id="schedule-title">Four sessions, already converted for you.</h2>
+          </div>
+          <p>Each session is two hours. The official schedule is 10:00 a.m. and 2:00 p.m. Mountain Daylight Time on Saturday and Sunday.</p>
+        </div>
+        <div class="session-grid" id="sessionGrid"></div>
+      </div>
+    </section>
+
+    <section class="section section-watch" aria-labelledby="watch-title">
+      <div class="shell watch-layout">
+        <div class="watch-intro">
+          <p class="section-kicker">How to join</p>
+          <h2 id="watch-title">Pick your country. We’ll keep the options honest.</h2>
+          <p>Official online streams work worldwide. Country or regional options only appear below when they are confirmed in an official Church source.</p>
+
+          <label class="select-label" for="countrySelect">Watching from</label>
+          <div class="select-wrap">
+            <select id="countrySelect" aria-describedby="countryHelp"></select>
+            <svg aria-hidden="true" viewBox="0 0 20 20"><path d="m6 8 4 4 4-4"/></svg>
+          </div>
+          <p class="field-help" id="countryHelp">Your country stays on this device only.</p>
+
+          <div class="country-summary" id="countrySummary" aria-live="polite"></div>
+        </div>
+
+        <div class="watch-options" id="watchOptions" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section section-help" aria-labelledby="help-title">
+      <div class="shell help-grid">
+        <div class="help-copy">
+          <p class="section-kicker">Useful on conference weekend</p>
+          <h2 id="help-title">Choose the stream that fits your connection.</h2>
+          <p>If data is tight, the Church broadcasts page offers audio-only listening in many languages. If you miss a session, full replays are posted after each session, with Gospel Library versions following soon after.</p>
+        </div>
+        <div class="help-list" role="list">
+          <a role="listitem" class="help-item" href="https://www.churchofjesuschrist.org/media/broadcasts/?lang=eng" target="_blank" rel="noreferrer">
+            <span class="help-icon" aria-hidden="true">◉</span>
+            <span><strong>Low-bandwidth option</strong><small>Open the official broadcasts page and choose Listen.</small></span>
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a role="listitem" class="help-item" href="https://www.churchofjesuschrist.org/study/general-conference/2026/10?lang=eng" target="_blank" rel="noreferrer">
+            <span class="help-icon" aria-hidden="true">▤</span>
+            <span><strong>Watch or study later</strong><small>Conference messages, audio, video and text as they are published.</small></span>
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a role="listitem" class="help-item" href="https://www.churchofjesuschrist.org/learn/ways-to-watch-general-conference?lang=eng" target="_blank" rel="noreferrer">
+            <span class="help-icon" aria-hidden="true">＋</span>
+            <span><strong>All official viewing methods</strong><small>Apps, smart speakers, TV and more from the Church.</small></span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-note" aria-label="About this site">
+      <div class="shell note-card">
+        <div>
+          <p class="section-kicker">About this helper</p>
+          <h2>Built to reduce timezone maths, not replace official sources.</h2>
+        </div>
+        <p>This is an independent countdown helper and is not an official website of The Church of Jesus Christ of Latter-day Saints. Schedule and viewing links point back to official Church sources where possible.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <p>General Conference Countdown · October 2026</p>
+      <div>
+        <a href="https://newsroom.churchofjesuschrist.org/event/october-2026-general-conference" target="_blank" rel="noreferrer">Official schedule</a>
+        <a href="https://www.churchofjesuschrist.org/learn/ways-to-watch-general-conference?lang=eng" target="_blank" rel="noreferrer">Ways to watch</a>
+      </div>
+    </div>
+  </footer>
+
+  <noscript>
+    <div class="noscript">JavaScript is needed for the live countdown and local-time conversion. The conference is October 3–4, 2026, with sessions at 10 a.m. and 2 p.m. MDT each day.</div>
+  </noscript>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
